@@ -17,14 +17,29 @@ import {
 } from 'react-native';
 
 import Dic from "./Container/Dic/Dic.js";
+import data from "./Data/Data.json";
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <Dic />
-    </>
-  );
-};
+export default class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: data
+
+    }
+  }
+
+  componentDidMount() {
+
+  }
 
 
-export default App;
+
+  render() {
+
+    return (
+      <Dic data={this.state.data} />
+    );
+  }
+}
+
